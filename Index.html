@@ -13,8 +13,7 @@
 
 <body ng-app="List">
   <form ng-submit="todoAdd()">
-    <input type="text" ng-model="item" size="20" placeholder="Item">
-    <input type="text" ng-model="amount" size="20" placeholder="Amount">
+    <input type="text" ng-model="item" size="20" placeholder="Item" float="center">
     <input type="image" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Plus_symbol.svg/500px-Plus_symbol.svg.png" alt="Submit" width="48" height="48">
    
 </form>
@@ -22,25 +21,23 @@
 <br>
 
 <div ng-repeat="x in todoList">
-    <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+    <label class="container">
+        <input type="checkbox" checked="checked" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+    <span class="checkmark"></span>
+</label>
 </div>
 
-<p><button ng-click="remove()">Remove marked</button></p>
+<p><button class="button" ng-click="remove()">Remove marked</button></p>
+
 <script>
 var app = angular.module('myApp', []); 
 app.controller('todoCtrl', function($scope) {
     $scope.todoList = [{todoText:'', done:false}];
 
     $scope.todoAdd = function() {
-        if ($scope.amount = 'null') {
-            $scope.amount = 1; 
-            $scope.todoList.push({todoText:$scope.item+" Amount: "+$scope.amount, done:false});
+            $scope.todoList.push({todoText:$scope.item, done:false});
             $scope.item = "";
-        }
-        else {
-        $scope.todoList.push({todoText:$scope.item+" "+$scope.amount, done:false});
-        $scope.item = "";
-        }
+            
     };
 
     $scope.remove = function() {

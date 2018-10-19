@@ -1,0 +1,17 @@
+h1 {
+    color: white;
+    font-family: "Arial Black", Gadget, sans-serif;
+   
+}
+
+
+body {
+    font-family: "Arial Black", Gadget, sans-serif;
+    background-color:white; 
+}
+
+#welcome-section {
+    background-image: url("https://www.bing.com/th?id=OIP.10DoAoNiPudjlcEEPm2bRAHaFb&pid=Api");
+    background-repeat: no-repeat;
+    background-position: center;
+}
